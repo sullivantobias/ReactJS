@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {ActiveButtons} from "./ActiveButtons";
+
 export class Introduction extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,10 @@ export class Introduction extends React.Component {
 
   dateClicked() {
     this.setState({actualDateClicked: new Date().toLocaleTimeString()})
+  }
+
+  resetDate() {
+    this.setState({actualDateClicked: ''})
   }
 
   render() {
@@ -23,8 +29,11 @@ export class Introduction extends React.Component {
         <div>
           <h1>Hi {this.props.userName}</h1>
           {localTime}
-          <button onClick={() => this.dateClicked()}> Click here</button>
+          <ActiveButtons
+            onClickSubmit={() => this.dateClicked()}
+            onClickReset={() => this.resetDate()}
+          />
         </div>
     )
   }
-};
+}
