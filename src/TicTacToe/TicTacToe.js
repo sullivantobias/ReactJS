@@ -122,6 +122,7 @@ export class Game extends React.Component {
 
     return (
         <div className="game">
+          <h1>Tic Tac Toe Section </h1>
           <div className='status'>{status}</div>
           <div className="timer">{timerStatus}</div>
           <div className="clickedPos">
@@ -138,6 +139,7 @@ export class Game extends React.Component {
           <div className="game-info">
             <ol>{moves}</ol>
           </div>
+          <hr/>
         </div>
     );
   }

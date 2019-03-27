@@ -1,10 +1,22 @@
 import React from "react";
 
-export const ActiveButtons = (props) => {
-  return (
-    <div>
-      <button onClick={props.onClickSubmit}> Click here</button>
-      <button onClick={props.onClickReset}> Reset</button>
-    </div>
-  )
+const ActiveButtons = (props) => {
+
+  if (props.resetActivated) {
+    return (
+        <div>
+          <button className={'buttons'} onClick={props.onClickSubmit}> Click here</button>
+          <button className={'buttons'} onClick={props.onClickReset}> Reset</button>
+        </div>
+    )
+  } else {
+    return (
+        <div>
+          <button className={'buttons'} onClick={props.onClickSubmit}> Click here</button>
+        </div>
+    )
+  }
+
 };
+
+export default ActiveButtons;
