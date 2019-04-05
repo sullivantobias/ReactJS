@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class NameForm extends React.Component {
   constructor(props) {
@@ -14,13 +15,18 @@ class NameForm extends React.Component {
 
   render() {
     return (
-        <div>
-          <input placeholder={'tell me your name'} type="text" value={this.state.value}
-                    onChange={this.handleChange}/>
-          <button className={'buttons'} data-value={this.state.value} onClick={this.props.onClick}>Send</button>
-        </div>
+      <div>
+        <input placeholder={'tell me your name'} type="text" value={this.state.value}
+               onChange={this.handleChange}/>
+        <button className={'buttons'} data-value={this.state.value} onClick={this.props.onClick}>Send</button>
+      </div>
     );
   }
 }
+
+/** Proptypes **/
+NameForm.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default NameForm;

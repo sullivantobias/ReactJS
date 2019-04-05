@@ -99,12 +99,12 @@ export class Game extends React.Component {
 
     const moves = history.map((step, move) => {
       const desc = move ?
-          'Go to move #' + move :
-          'Go to game start';
+        'Go to move #' + move :
+        'Go to game start';
       return (
-          <li key={move} className={'temporalButton'}>
-            <button onClick={() => this.jumpTo(move)}>{desc}</button>
-          </li>
+        <li key={move} className={'temporalButton'}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
       );
     });
 
@@ -121,26 +121,26 @@ export class Game extends React.Component {
     }
 
     return (
-        <div className="game">
-          <h1>Tic Tac Toe Section </h1>
-          <div className='status'>{status}</div>
-          <div className="timer">{timerStatus}</div>
-          <div className="clickedPos">
-            {this.state.clickedSquarePos}
-          </div>
-          <div className="game-board">
-            <Board
-                won={winnerSquares}
-                isDisabled={isDisabled}
-                squares={current.squares}
-                onClick={(i, pos) => this.handleClick(i, pos)}
-            />
-          </div>
-          <div className="game-info">
-            <ol>{moves}</ol>
-          </div>
-          <hr/>
+      <div className="game">
+        <h1>Tic Tac Toe Section </h1>
+        <div className='status'>{status}</div>
+        <div className="timer">{timerStatus}</div>
+        <div className="clickedPos">
+          {this.state.clickedSquarePos}
         </div>
+        <div className="game-board">
+          <Board
+            won={winnerSquares}
+            isDisabled={isDisabled}
+            squares={current.squares}
+            onClick={(i, pos) => this.handleClick(i, pos)}
+          />
+        </div>
+        <div className="game-info">
+          <ol>{moves}</ol>
+        </div>
+        <hr/>
+      </div>
     );
   }
 }
